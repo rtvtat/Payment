@@ -1,7 +1,7 @@
 public class CreditPaymentService {
-    public long calculate(double summaKredita, double stavka, int period) {
-        double monthStavka = stavka / 100 / 12;
-        long payment = Math.round(summaKredita * (monthStavka / (1 - Math.pow((1 + monthStavka), -period))));
+    public long calculate(double creditAmount, double rate, int period) {
+        double monthlyRate = rate / 100 / 12;
+        long payment = Math.round(creditAmount * (monthlyRate / (1 - Math.pow((1 + monthlyRate), -period))));
         return payment;
     }
 }
